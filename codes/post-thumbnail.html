@@ -1,0 +1,53 @@
+<b:if cond='data:blog.pageType != &quot;item&quot;'>
+    <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+        <div class="post-snippet">
+            <div class="post-snippet-thumbnail">
+                <b:if cond='data:post.thumbnailUrl'>
+                    <a expr:href='data:post.url'>
+                        <img expr:alt='data:post.title' expr:src='resizeImage(data:post.thumbnailUrl, 380, &quot;380:285&quot;)' expr:title='data:post.title'/>
+                    </a>
+                    <b:else/>
+                    <b:if cond='data:post.firstImageUrl'>
+                        <a expr:href='data:post.url'>
+                            <img expr:alt='data:post.title' expr:src='data:post.firstImageUrl' expr:title='data:post.title'/>
+                        </a>
+                        <b:else/>
+                        <a expr:href='data:post.url'>
+                            <img expr:alt='data:post.title' expr:title='data:post.title'/>
+                        </a>
+                    </b:if>
+                </b:if>
+            </div>
+            <div class="post-snippet-button">
+                <b:loop values='data:post.labels' var='label'>
+                    <b:if cond='data:label.name == &quot;Downloads&quot;'>
+                        <a expr:href='data:post.url' expr:title='data:post.title'>Download</a>
+                    </b:if>
+                    <b:if cond='data:label.name == &quot;Tutoriais&quot;'>
+                        <a expr:href='data:post.url' expr:title='data:post.title'>Ler Mais</a>
+                    </b:if>
+                    <b:if cond='data:label.name == &quot;Cheats&quot;'>
+                        <a expr:href='data:post.url' expr:title='data:post.title'>Ler Mais</a>
+                    </b:if>
+                </b:loop>
+            </div>
+        </div>
+    </b:if>
+</b:if>
+
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+    <!-- Then use the post body as the schema.org description, for good G+/FB snippeting. -->
+    <div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id'
+         expr:itemprop='(data:blog.metaDescription ? &quot;&quot; : &quot;description &quot;) + &quot;articleBody&quot;'>
+        <data:post.body/>
+        <div style='clear: both;'/> <!-- clear for photos floats -->
+    </div>
+</b:if>
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+    <!-- Then use the post body as the schema.org description, for good G+/FB snippeting. -->
+    <div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id'
+         expr:itemprop='(data:blog.metaDescription ? &quot;&quot; : &quot;description &quot;) + &quot;articleBody&quot;'>
+        <data:post.body/>
+        <div style='clear: both;'/> <!-- clear for photos floats -->
+    </div>
+</b:if>

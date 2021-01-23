@@ -9,289 +9,28 @@
         <meta content='width=1100' name='viewport'/>
     </b:if>
     <b:include data='blog' name='all-head-content'/>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
     <title><data:blog.pageTitle/></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <style>
-        :root {
-            --primary: #fd8000;
-            --secondary: #111111;
-            --light: #dddddd;
-            --medium: #888888;
-            --dark: #303030;
-            --black: #111111;
-            --white: #ffffff;
-            --border-radius: .25rem;
-        }
-
-        body {
-            background-color: var(--dark);
-            background-repeat: repeat-x;
-            background-position-x: center;
-        }
-
-        #header-nav > .nav-item > a {
-            color: white;
-            text-shadow: 1px 1px var(--black);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-radius: var(--border-radius);
-        }
-
-        #header-nav > .nav-item > a:hover {
-            background-color: var(--primary);
-        }
-
-        .navbar {
-            background-color: var(--black);
-            font-weight: 600;
-            letter-spacing: .5px;
-            border-bottom: 1px solid var(--medium);
-        }
-
-        .brand-container {
-            min-height: 200px;
-            display: flex;
-            align-items: center;
-        }
-
-        .brand img {
-            max-width: 100%;
-        }
-
-        .nav-container {
-            margin-bottom: 30px;
-        }
-
-        .nav-link.facebook-color {
-            color: #3B5998 !important;
-        }
-
-        .nav-link.yt-color {
-            color: #C4302B !important;
-        }
-
-        .nav-link.facebook-color:hover,
-        .nav-link.yt-color:hover {
-            color: white !important;
-        }
-
-        .ads-container {
-            background-color: var(--light);
-            border-radius: var(--border-radius);
-            margin-bottom: 30px;
-            padding: 5px;
-        }
-
-        .categories-nav .nav-link {
-            color: var(--light);
-            font-weight: 600;
-            text-shadow: 1px 1px var(--black);
-            text-transform: uppercase;
-            padding: 15px 10px;
-            border-radius: var(--border-radius);
-        }
-
-        .categories-nav .nav-link:hover {
-            color: var(--primary);
-            background-color: var(--black);
-            border-right: 4px solid var(--primary);
-        }
-
-        .categories-nav .nav-link img {
-            max-width: 48px;
-            margin-right: 10px;
-        }
-
-        .categories-nav .nav-item {
-            width: 100%;
-        }
-
-        .post {
-            background-color: var(--light);
-            border-radius: var(--border-radius);
-            margin-bottom: 30px;
-            padding: 5px;
-        }
-
-        .post_conteudo .post_img {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .post_conteudo .post_img img {
-            width: 100%;
-        }
-
-        .post_conteudo .post_img .post_img1 {
-            width: 100%;
-            padding: 2px;
-        }
-
-        .post_conteudo .post_img .post_img2,
-        .post_conteudo .post_img .post_img3,
-        .post_conteudo .post_img .post_img4,
-        .post_conteudo .post_img .post_img5,
-        .post_conteudo .post_img .post_img6 {
-            width: 25%;
-            padding: 2px;
-        }
-
-        .post_conteudo .post_video2 {
-            position: relative;
-            padding-bottom: 52%;
-            padding-top: 25px;
-            height: 0;
-            margin: 0;
-        }
-
-        .post_conteudo .post_video2 iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-        }
-
-        .post_conteudo .post_info {
-            display: flex;
-        }
-
-        .post_conteudo .post_info .post_autor {
-            width: 50%;
-            margin-right: 5px;
-        }
-
-        .post_conteudo .post_info .post_subst {
-            width: 50%;
-        }
-
-        .post_conteudo .post_video p,
-        .post_conteudo .post_info .post_autor p,
-        .post_conteudo .post_info .post_subst p,
-        .post_conteudo .post_install_modloader p,
-        .post_conteudo .post_desc p,
-        .post_conteudo .post_info2 p {
-            padding: 5px 10px;
-            color: var(--black);
-            font-size: 16px;
-            width: 100%;
-            background-color: #eaeaea;
-            margin-top: 2px;
-            margin-bottom: 0;
-            border-radius: var(--border-radius);
-        }
-
-        .post_conteudo .post_video > p:first-child,
-        .post_conteudo .post_info .post_autor > p:first-child,
-        .post_conteudo .post_info .post_subst > p:first-child,
-        .post_conteudo .post_install_modloader > p:first-child,
-        .post_conteudo .post_desc > p:first-child,
-        .post_conteudo .post_info2 > p:first-child {
-            border-left: 3px solid var(--primary);
-            padding: 3px 10px;
-            color: var(--black);
-            background-color: var(--white);
-            font-weight: 600;
-            font-size: 14px;
-            width: 100%;
-            margin-top: 15px;
-            margin-bottom: 0;
-            border-radius: var(--border-radius);
-        }
-
-        .post_conteudo .post_downloads {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-
-        .post_conteudo .post_downloads a {
-            padding: 15px 30px;
-            min-width: 200px;
-            background-color: var(--primary);
-            border-radius: var(--border-radius);
-            text-align: center;
-            color: var(--white);
-            text-shadow: 1px 1px var(--black);
-            text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 2px;
-            font-weight: bold;
-        }
-
-        .post_conteudo .post_downloads a:hover {
-            background-color: var(--dark);
-            box-shadow: 1px 2px var(--primary);
-        }
-
-        .footer-container {
-            margin-top: 30px;
-            padding: 30px;
-            background-color: var(--black);
-            color: var(--light);
-        }
-
-        .mobile-menu {
-            display: none;
-            cursor: pointer;
-            background-color: var(--primary);
-            color: var(--white);
-            border-radius: var(--border-radius);
-            padding: 15px 30px;
-            margin-bottom: 15px;
-            font-size: 24px;
-            text-shadow: 1px 1px var(--black);
-        }
-
-        .mobile-menu i {
-            margin-right: 15px;
-        }
-
-        @media (max-width: 767.98px) {
-            .mobile-menu {
-                display: flex;
-                align-items: center;
-            }
-
-            .categories-nav {
-                display: none;
-            }
-
-            .categories-nav.show {
-                display: block;
-            }
-
-            .categories-nav {
-                background-color: var(--light);
-                border-radius: var(--border-radius);
-            }
-
-            .categories-nav .nav-link {
-                color: var(--dark);
-                text-shadow: 1px 1px var(--white);
-                padding: 15px 10px;
-                border: 1px solid var(--white);
-            }
-
-            .categories-nav .nav-link:hover {
-                color: var(--primary);
-                background-color: var(--light);
-                border-right: 0;
-            }
-        }
-
-    </style>
+    <b:skin><![CDATA[/* ]]></b:skin>
+    <style>:root{--primary:#fd8000;--primary-darken:#e27400;--secondary:#111111;--light:#dddddd;--medium:#888888;--dark:#303030;--black:#111111;--white:#ffffff;--border-radius:.25rem}body{background-color:var(--dark);background-repeat:repeat-x;background-position-x:center}a{color:var(--primary);text-decoration:none}a:hover{color:var(--primary-darken)}#header-nav>.nav-item>a{color:#fff;text-shadow:1px 1px var(--black);font-weight:600;text-transform:uppercase;letter-spacing:.5px;border-radius:var(--border-radius);height:100%}#header-nav>.nav-item>a:hover{background-color:var(--primary)}#header-nav>.nav-item>a .fa-search{font-size:20px}.navbar{background-color:var(--black);font-weight:600;letter-spacing:.5px;border-bottom:1px solid var(--medium)}.brand-container{min-height:200px;display:flex;align-items:center}.brand img{max-width:100%}.nav-container{margin-bottom:30px}.nav-link.facebook-color{color:#3b5998!important}.nav-link.yt-color{color:#c4302b!important}.nav-link.facebook-color:hover,.nav-link.yt-color:hover{color:#fff!important}.ads-container{background-color:var(--light);border-radius:var(--border-radius);margin-bottom:30px;padding:5px}.categories-nav .nav-link{color:var(--light);font-weight:600;text-shadow:1px 1px var(--black);text-transform:uppercase;padding:15px 10px;border-radius:var(--border-radius)}.categories-nav .nav-link:hover{color:var(--primary);background-color:var(--black);border-right:4px solid var(--primary)}.categories-nav .nav-link img{max-width:48px;margin-right:10px}.categories-nav .nav-item{width:100%}.post,.status-msg-wrap{background-color:var(--light);border-radius:var(--border-radius);margin-bottom:30px;padding:5px}.status-msg-wrap{margin-left:0;margin-right:0;margin-top:0;width:100%}.status-msg-body a{text-decoration:none}.status-msg-border{border:0}.post-carros table{margin:auto}.post-carros table td{margin:auto;padding:5px 10px;font-weight:600;text-transform:uppercase}.post-carros table td img{max-width:75px;min-height:48px}.post-title{font-size:20px;background-color:var(--white);padding:15px;border-left:4px solid var(--primary);border-radius:var(--border-radius)}.post-title a{color:var(--black);text-decoration:none}.post_conteudo .post_img{display:flex;flex-wrap:wrap;justify-content:center}.post_conteudo .post_img img{width:100%}.post_conteudo .post_img .post_img1{width:100%;padding:2px}.post_conteudo .post_img .post_img2,.post_conteudo .post_img .post_img3,.post_conteudo .post_img .post_img4,.post_conteudo .post_img .post_img5,.post_conteudo .post_img .post_img6{width:25%;padding:2px}.post_conteudo .post_video2{position:relative;padding-bottom:52%;padding-top:25px;height:0;margin:0}.post_conteudo .post_video2 iframe{position:absolute;top:0;left:0;width:100%;height:100%;margin:0}.post_conteudo .post_info{display:flex}.post_conteudo .post_info .post_autor{width:50%;margin-right:5px}.post_conteudo .post_info .post_subst{width:50%}.post_conteudo .post_desc p,.post_conteudo .post_info .post_autor p,.post_conteudo .post_info .post_subst p,.post_conteudo .post_info2 p,.post_conteudo .post_install p,.post_conteudo .post_install_modloader p,.post_conteudo .post_uso p,.post_conteudo .post_video p{padding:5px 10px;color:var(--black);font-size:16px;width:100%;background-color:#eaeaea;margin-top:2px;margin-bottom:0;border-radius:var(--border-radius)}.post_conteudo .post_desc>p:first-child,.post_conteudo .post_info .post_autor>p:first-child,.post_conteudo .post_info .post_subst>p:first-child,.post_conteudo .post_info2>p:first-child,.post_conteudo .post_install>p:first-child,.post_conteudo .post_install_modloader>p:first-child,.post_conteudo .post_uso>p:first-child,.post_conteudo .post_video>p:first-child{border-left:3px solid var(--primary);padding:3px 10px;color:var(--black);background-color:var(--white);font-weight:600;font-size:14px;width:100%;margin-top:15px;margin-bottom:0;border-radius:var(--border-radius)}.post_conteudo .post_downloads{display:flex;align-items:center;justify-content:center;margin-top:30px;margin-bottom:15px}.post_conteudo .post_downloads a{padding:15px 30px;min-width:200px;background-color:var(--primary);border-radius:var(--border-radius);text-align:center;color:var(--white);text-shadow:1px 1px var(--black);text-transform:uppercase;text-decoration:none;letter-spacing:2px;font-weight:700}.post_conteudo .post_downloads a:hover{background-color:var(--primary-darken)}.blog-feeds,.date-header,.post-feeds,.post-footer-line-1,.post-footer-line-2{display:none}.footer-container{margin-top:30px;padding:30px;background-color:var(--black);color:var(--light)}.mobile-menu{display:none;cursor:pointer;background-color:var(--primary);color:var(--white);border-radius:var(--border-radius);padding:15px 30px;margin-bottom:15px;font-size:24px;text-shadow:1px 1px var(--black)}.mobile-menu i{margin-right:15px}.home-link{display:none}.blog-pager{display:flex;align-items:center;justify-content:space-between;margin-top:30px!important}.blog-pager-newer-link,.blog-pager-older-link{padding:5px 20px;max-width:100%;background-color:var(--primary);border-radius:var(--border-radius);text-align:center;color:var(--white);text-shadow:1px 1px var(--black);text-transform:uppercase;text-decoration:none;letter-spacing:2px;font-weight:700;display:inline-block}.blog-pager-newer-link:hover,.blog-pager-older-link:hover{background-color:var(--primary-darken);color:var(--white)}#search{z-index:99;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.9);opacity:0;visibility:hidden;transform:scale(1.2);transition:all .6s cubic-bezier(.23,1,.32,1)}#search.active{opacity:1;visibility:visible;transform:scale(1);z-index:100;margin:0}#search .input{position:absolute;top:0;left:0;right:0;bottom:0;width:95%;height:100px;margin:auto;max-width:1000px}#search .input .search{float:left;width:calc(100% - 100px);height:100px;padding:0;margin:0;border:0;outline:0;background:0 0;font-size:60px;color:rgba(255,255,255,.5);font-weight:700;line-height:100px;text-indent:50px;transition:all .3s ease-out}#search .input .submit{cursor:pointer;float:left;width:100px;height:100px;padding:0;margin:0;border:0;outline:0;background:0 0;font-size:60px;color:rgba(255,255,255,.5);text-align:center;line-height:100px;transition:all .3s ease-out}#search .input .search:focus,#search .input .submit:hover{color:rgba(255,255,255,.8)}#search #close{cursor:pointer;position:absolute;top:30px;right:30px;width:50px;height:50px;padding:0;margin:0;border:0;outline:0;background:0 0;font-size:30px;color:rgba(255,255,255,.5);text-align:center;line-height:50px}@media (max-width:767.98px){.mobile-menu{display:flex;align-items:center}.categories-nav{display:none}.categories-nav.show{display:block}.categories-nav{background-color:var(--light);border-radius:var(--border-radius)}.categories-nav .nav-link{color:var(--dark);text-shadow:1px 1px var(--white);padding:15px 10px;border:1px solid var(--white)}.categories-nav .nav-link:hover{color:var(--primary);background-color:var(--light);border-right:0}}</style>
+    <b:if cond='data:blog.pageType != &quot;item&quot;'>
+        <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+            <style>.blog-posts{display:flex;flex-wrap:wrap}.date-outer{width:50%;padding:5px}.post{height:100%;margin-bottom:0}.post-snippet-thumbnail img{width:100%;max-width:100%;border-radius:var(--border-radius)}.post-snippet-button{text-align:right;margin-top:5px}.post-snippet-button a{padding:5px 20px;max-width:100%;background-color:var(--primary);border-radius:var(--border-radius);text-align:center;color:var(--white);text-shadow:1px 1px var(--black);text-transform:uppercase;text-decoration:none;letter-spacing:2px;font-weight:700;display:inline-block}.post-snippet-button a:hover{background-color:var(--primary-darken)}.post-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}@media (max-width:991.98px){.date-outer{width:100%;padding:0;margin-bottom:15px}}</style>
+        </b:if>
+    </b:if>
 </head>
 <body>
+<form action='/search' id='search' method='get'>
+    <div class='input'>
+        <input class='search' name='q' type='text' placeholder='Digite aqui...'/>
+        <button class='submit fa fa-search' type='submit' onclick="closeSearch()" value=''/>
+    </div>
+    <button class='fa fa-times' id='close' type='reset' onclick="closeSearch()" value=''/>
+</form>
 <nav class="navbar navbar-expand navbar-dark">
     <div class="container">
         <ul class="navbar-nav h-100 me-auto">
@@ -323,39 +62,19 @@
             <div class="brand">
                 <a href="/">
                     <img src="https://2.bp.blogspot.com/-dtC5RYgMe9M/WKihimapFTI/AAAAAAAAPD4/vHQDA1YVFgsB-2Zg_Wt6LWZXHAVzyah6QCK4B/s1600/logomodsgtasa.png"
-                         alt="Mods GTA San Andreas" title="Mods GTA San Andreas">
+                         alt="Mods GTA San Andreas" title="Mods GTA San Andreas"/>
                 </a>
             </div>
         </div>
         <div class="nav-container">
-            <ul class="nav justify-content-center" id="header-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Início</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/2013/06/cheats-gta-san-andreas-codigos-trapacas.html">Trapaças</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/p/tutoriais-para-gta-san-andreas.html">Tutoriais</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/p/backups.html">Backups</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="http://br.gtafive.com.br/2017/09/gta5-cheats-codigos-trapacas-manhas-macetes-senhas.html">
-                        Cheats GTA 5
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                       aria-expanded="false">Sobre</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/p/mapa-do-site.html">Mapa do Site</a></li>
-                        <li><a class="dropdown-item" href="/p/politicas.html">Política de Privacidade</a></li>
-                    </ul>
-                </li>
-            </ul>
+            <b:section id="header-nav">
+                <b:widget id='HTML2' locked='true' title='' type='HTML'>
+                    <b:widget-settings>
+                        <b:widget-setting name='content'>
+                        </b:widget-setting>
+                    </b:widget-settings>
+                </b:widget>
+            </b:section>
         </div>
         <div class="ads-container">
             ADS
@@ -368,106 +87,21 @@
                     <i class="fas fa-bars"></i>
                     <span>Categorias</span>
                 </div>
-                <nav class="categories-nav">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="closeCategoriesMenu()">
-                                <img src="https://2.bp.blogspot.com/-qkmku_4R2ao/WhyQ8716DGI/AAAAAAAAQHg/MEUjJ6b3bnY-q1jjOx39zY5HL1YOVb-TQCLcBGAs/s1600/vtosa.png">
-                                <span>V para SA</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <img src="https://2.bp.blogspot.com/-qkmku_4R2ao/WhyQ8716DGI/AAAAAAAAQHg/MEUjJ6b3bnY-q1jjOx39zY5HL1YOVb-TQCLcBGAs/s1600/vtosa.png">
-                                <span>V para SA</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <img src="https://2.bp.blogspot.com/-qkmku_4R2ao/WhyQ8716DGI/AAAAAAAAQHg/MEUjJ6b3bnY-q1jjOx39zY5HL1YOVb-TQCLcBGAs/s1600/vtosa.png">
-                                <span>V para SA</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <img src="https://2.bp.blogspot.com/-qkmku_4R2ao/WhyQ8716DGI/AAAAAAAAQHg/MEUjJ6b3bnY-q1jjOx39zY5HL1YOVb-TQCLcBGAs/s1600/vtosa.png">
-                                <span>V para SA</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <img src="https://2.bp.blogspot.com/-qkmku_4R2ao/WhyQ8716DGI/AAAAAAAAQHg/MEUjJ6b3bnY-q1jjOx39zY5HL1YOVb-TQCLcBGAs/s1600/vtosa.png">
-                                <span>V para SA</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+                <b:section id="categories">
+                    <b:widget id='HTML3' locked='true' title='' type='HTML'>
+                        <b:widget-settings>
+                            <b:widget-setting name='content'>
+                            </b:widget-setting>
+                        </b:widget-settings>
+                    </b:widget>
+                </b:section>
             </aside>
         </div>
         <div class="col-12 col-md-8 col-lg-9">
             <main>
-                <div class="post">
-                    <div class='post_conteudo'>
-                        <div class='post_img'>
-                            <div class='post_img1'><a
-                                    href='https://1.bp.blogspot.com/-3YGjJObAP4I/XlcOqrJKTbI/AAAAAAAAQbk/gPtmAeasIEs-Vybt31mzFRpdfWwj4tGvwCNcBGAsYHQ/s1600/Honda CBR 1000RR-R 2020_1.jpg'><img
-                                    src='https://1.bp.blogspot.com/-3YGjJObAP4I/XlcOqrJKTbI/AAAAAAAAQbk/gPtmAeasIEs-Vybt31mzFRpdfWwj4tGvwCNcBGAsYHQ/s600/Honda CBR 1000RR-R 2020_1.jpg'
-                                    title='Honda CBR 1000RR-R 2020 para GTA San Andreas'
-                                    alt='Honda CBR 1000RR-R 2020 para GTA San Andreas'/></a></div>
-                            <div class='post_img2'><a
-                                    href='https://1.bp.blogspot.com/-uWyXDU7pkV0/XlcOqmq3III/AAAAAAAAQbo/H2fIJRjiqJYZoxyw6iTI029E4oBuKGkoACNcBGAsYHQ/s1600/Honda CBR 1000RR-R 2020_2.jpg'><img
-                                    src='https://1.bp.blogspot.com/-uWyXDU7pkV0/XlcOqmq3III/AAAAAAAAQbo/H2fIJRjiqJYZoxyw6iTI029E4oBuKGkoACNcBGAsYHQ/s600/Honda CBR 1000RR-R 2020_2.jpg'
-                                    title='Honda CBR 1000RR-R 2020 para GTA San Andreas'
-                                    alt='Honda CBR 1000RR-R 2020 para GTA San Andreas'/></a></div>
-                            <div class='post_img3'><a
-                                    href='https://1.bp.blogspot.com/-ZeHxNUuuAaw/XlcOqTRQiVI/AAAAAAAAQbg/Rg9E0qNQ5MY4eRbeZn2CTTzs6PqIUplaQCNcBGAsYHQ/s1600/Honda CBR 1000RR-R 2020_3.jpg'><img
-                                    src='https://1.bp.blogspot.com/-ZeHxNUuuAaw/XlcOqTRQiVI/AAAAAAAAQbg/Rg9E0qNQ5MY4eRbeZn2CTTzs6PqIUplaQCNcBGAsYHQ/s600/Honda CBR 1000RR-R 2020_3.jpg'
-                                    title='Honda CBR 1000RR-R 2020 para GTA San Andreas'
-                                    alt='Honda CBR 1000RR-R 2020 para GTA San Andreas'/></a></div>
-                            <div class='post_img4'><a
-                                    href='https://1.bp.blogspot.com/-4VUTz8nx4ok/XlcOy7EzrgI/AAAAAAAAQbw/gIPi3XoilGAm3hBgIOLxT4boseLdGDs6ACNcBGAsYHQ/s1600/Honda CBR 1000RR-R 2020_4.jpg'><img
-                                    src='https://1.bp.blogspot.com/-4VUTz8nx4ok/XlcOy7EzrgI/AAAAAAAAQbw/gIPi3XoilGAm3hBgIOLxT4boseLdGDs6ACNcBGAsYHQ/s600/Honda CBR 1000RR-R 2020_4.jpg'
-                                    title='Honda CBR 1000RR-R 2020 para GTA San Andreas'
-                                    alt='Honda CBR 1000RR-R 2020 para GTA San Andreas'/></a></div>
-<!--                            <div class='post_img5'><a-->
-<!--                                    href='https://1.bp.blogspot.com/-jz2eJDBiTTQ/XlcOr94gkXI/AAAAAAAAQbs/uWD8iJ-dSvQ24OE8YyCUS2MB_caOI0moQCNcBGAsYHQ/s1600/Honda CBR 1000RR-R 2020_5.jpg'><img-->
-<!--                                    src='https://1.bp.blogspot.com/-jz2eJDBiTTQ/XlcOr94gkXI/AAAAAAAAQbs/uWD8iJ-dSvQ24OE8YyCUS2MB_caOI0moQCNcBGAsYHQ/s600/Honda CBR 1000RR-R 2020_5.jpg'-->
-<!--                                    title='Honda CBR 1000RR-R 2020 para GTA San Andreas'-->
-<!--                                    alt='Honda CBR 1000RR-R 2020 para GTA San Andreas'/></a></div>-->
-                        </div>
-                        <div class='post_video'>
-                            <p>Vídeo:</p>
-                            <div class='post_video2'>
-                                <p>
-                                    <iframe width='560' height='315' src='https://www.youtube.com/embed/yersWUsLflM'
-                                            frameborder='0' allowfullscreen></iframe>
-                                </p>
-                            </div>
-                        </div>
-                        <div class='post_info'>
-                            <div class='post_autor'>
-                                <p>Autor:</p>
-                                <p>NGR_Ardiansyah</p>
-                            </div>
-                            <div class='post_subst'>
-                                <p>Substitui:</p>
-                                <p>BF-400</p></div>
-                        </div>
-                        <div class='post_desc'>
-                            <p>Descrição:</p>
-                            <p>Honda CBR 1000RR-R 2020 para GTA San Andreas</p>
-                        </div>
-                        <div style='clear: both;'></div>
-                        <div class='post_downloads'>
-                            <a
-                                href='http://elitegta.com.br/modsgtasa/downloads/1582763648_GTA_SA_Honda_CBR_1000RR-R_2020.rar'
-                                title='Honda CBR 1000RR-R 2020'>Download</a>
-                        </div>
-                    </div>
-                </div>
-                <!--                <b:section class='main' id='main' showaddelement='yes'>-->
-                <!--                    <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'/>-->
-                <!--                </b:section>-->
+                <b:section class='main' id='main' showaddelement='yes'>
+                    <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'/>
+                </b:section>
             </main>
         </div>
     </div>
@@ -484,38 +118,14 @@
         crossorigin="anonymous">
 </script>
 <script type="text/javascript">
-    window.addEventListener('load', () => {
-        setBackgroundImage();
-        setCopyrightYear();
-    });
-
-    function setBackgroundImage() {
-        const images = [
-            'https://4.bp.blogspot.com/-l7HbfG2VbMA/W-N3ZK1sH5I/AAAAAAAAQTU/kZ1ZTF1NaZMMfNWvpaysbfUTaAYQ5tDAACLcBGAs/s5000/bg1.jpg',
-            'https://4.bp.blogspot.com/-fh3WgAv7ezg/W-N3ZMMGK_I/AAAAAAAAQTQ/aXtMn3gFHf4ZwhLqdNBm37TEarktjs-rQCLcBGAs/s5000/bg2.jpg',
-            'https://1.bp.blogspot.com/-NC2U-ExNez8/W-N3ZKpD0SI/AAAAAAAAQTY/HlfPTTbYOwE7lHBk24Z-SoZm7VVU13cfgCLcBGAs/s5000/bg3.jpg',
-            'https://2.bp.blogspot.com/-cQ9B32pTVVA/W-N3Zv81xmI/AAAAAAAAQTc/oKK3OpcivRA9bN_xVuK112G8Ie3aB3ypgCLcBGAs/s5000/bg4.jpg'
-        ];
-        document.body.style.backgroundImage = `url(${images[Math.floor(Math.random() * images.length)]})`;
-    }
-
-    function setCopyrightYear() {
-        document.getElementById('this_year').innerText = new Date().getFullYear().toString();
-    }
-
-    function toggleCategoriesMenu() {
-        const element = document.getElementsByClassName('categories-nav')[0];
-        if (element.classList.contains('show')) {
-            element.classList.remove('show');
-        } else {
-            element.classList.add('show');
-        }
-    }
-
-    function closeCategoriesMenu() {
-        const element = document.getElementsByClassName('categories-nav')[0];
-        element.classList.remove('show');
-    }
+    window.addEventListener('load',()=>{setBackgroundImage();setCopyrightYear();replaceDownloadLinks()});function setBackgroundImage(){const images=['https://4.bp.blogspot.com/-l7HbfG2VbMA/W-N3ZK1sH5I/AAAAAAAAQTU/kZ1ZTF1NaZMMfNWvpaysbfUTaAYQ5tDAACLcBGAs/s5000/bg1.jpg','https://4.bp.blogspot.com/-fh3WgAv7ezg/W-N3ZMMGK_I/AAAAAAAAQTQ/aXtMn3gFHf4ZwhLqdNBm37TEarktjs-rQCLcBGAs/s5000/bg2.jpg','https://1.bp.blogspot.com/-NC2U-ExNez8/W-N3ZKpD0SI/AAAAAAAAQTY/HlfPTTbYOwE7lHBk24Z-SoZm7VVU13cfgCLcBGAs/s5000/bg3.jpg','https://2.bp.blogspot.com/-cQ9B32pTVVA/W-N3Zv81xmI/AAAAAAAAQTc/oKK3OpcivRA9bN_xVuK112G8Ie3aB3ypgCLcBGAs/s5000/bg4.jpg'];document.body.style.backgroundImage=`url(${images[Math.floor(Math.random() * images.length)]})`}
+    function setCopyrightYear(){document.getElementById('this_year').innerText=new Date().getFullYear().toString()}
+    function toggleCategoriesMenu(){const element=document.getElementsByClassName('categories-nav')[0];if(element.classList.contains('show')){element.classList.remove('show')}else{element.classList.add('show')}}
+    function closeCategoriesMenu(){const element=document.getElementsByClassName('categories-nav')[0];element.classList.remove('show')}
+    function replaceDownloadLinks(){const elements=document.getElementsByTagName('a');for(let a of elements){let link=a.href;if(link.includes('http://www.elitegta.com.br')){link=link.replace('http://www.elitegta.com.br/','https://elitegta.websiteseguro.com/')
+        a.href=link}}}
+    function openSearch(){const element=document.getElementById('search');element.classList.add('active')}
+    function closeSearch(){const element=document.getElementById('search');element.classList.remove('active')}
 </script>
 </body>
 </html>

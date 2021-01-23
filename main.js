@@ -1,5 +1,9 @@
+// https://www.minifier.org/
+
 window.addEventListener('load', () => {
     setBackgroundImage();
+    setCopyrightYear();
+    replaceDownloadLinks();
 });
 
 function setBackgroundImage() {
@@ -12,6 +16,10 @@ function setBackgroundImage() {
     document.body.style.backgroundImage = `url(${images[Math.floor(Math.random() * images.length)]})`;
 }
 
+function setCopyrightYear() {
+    document.getElementById('this_year').innerText = new Date().getFullYear().toString();
+}
+
 function toggleCategoriesMenu() {
     const element = document.getElementsByClassName('categories-nav')[0];
     if (element.classList.contains('show')) {
@@ -21,3 +29,28 @@ function toggleCategoriesMenu() {
     }
 }
 
+function closeCategoriesMenu() {
+    const element = document.getElementsByClassName('categories-nav')[0];
+    element.classList.remove('show');
+}
+
+function replaceDownloadLinks() {
+    const elements = document.getElementsByTagName('a');
+    for (let a of elements) {
+        let link = a.href;
+        if (link.includes('http://www.elitegta.com.br')) {
+            link = link.replace('http://www.elitegta.com.br/', 'https://elitegta.websiteseguro.com/')
+            a.href = link;
+        }
+    }
+}
+
+function openSearch() {
+    const element = document.getElementById('search');
+    element.classList.add('active');
+}
+
+function closeSearch() {
+    const element = document.getElementById('search');
+    element.classList.remove('active');
+}
