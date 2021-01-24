@@ -42,6 +42,10 @@ function replaceDownloadLinks() {
             link = link.replace('http://www.elitegta.com.br/', 'https://elitegta.websiteseguro.com/')
             a.href = link;
         }
+        if (link.includes('http://elitegta.com.br')) {
+            link = link.replace('http://elitegta.com.br/', 'https://elitegta.websiteseguro.com/')
+            a.href = link;
+        }
     }
 }
 

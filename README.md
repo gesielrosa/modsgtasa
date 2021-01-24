@@ -11,3 +11,12 @@
     </div>
   ```
 - Copiar as section para os devidos lugares;
+
+### Falta fazer
+
+- Página de download;
+- Votação;
+- Breadcrumb;
+- Paginação;
+- Comentários Facebook;
+- Posts semelhantes
