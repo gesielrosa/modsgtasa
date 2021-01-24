@@ -19,4 +19,5 @@
 - Breadcrumb;
 - Paginação;
 - Comentários Facebook;
-- Posts semelhantes
+- Posts semelhantes;
+- Novo gerador e uploader;
