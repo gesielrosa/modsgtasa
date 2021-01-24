@@ -79,7 +79,7 @@ a:hover {
 
 .footer-ads-container,
 .ads-container {
-    background-color: var(--light);
+    background-color: transparent;
     border-radius: var(--border-radius);
     margin-bottom: 30px;
     padding: 5px;
@@ -119,7 +119,6 @@ a:hover {
 .post {
     background-color: var(--light);
     border-radius: var(--border-radius);
-    margin-bottom: 30px;
     padding: 5px;
 }
 
@@ -351,8 +350,35 @@ table .postDownload a span {
 .blog-pager {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 30px !important;
+}
+
+.blog-pager .pageNum {
+    background-color: var(--light);
+    color: var(--black);
+    border-radius: var(--border-radius);
+    margin: 0 5px;
+    padding: 5px 15px;
+}
+
+.blog-pager .pageNum:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.blog-pager .current {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.blog-pager .delimiter {
+    padding: 0;
+    background-color: transparent;
+}
+
+.blog-pager .delimiter:hover {
+    background-color: transparent;
 }
 
 .blog-pager-newer-link,
@@ -369,6 +395,7 @@ table .postDownload a span {
     letter-spacing: 2px;
     font-weight: bold;
     display: inline-block;
+    margin: 0 10px;
 }
 
 .blog-pager-newer-link:hover,

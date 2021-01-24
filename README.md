@@ -2,6 +2,12 @@
 
 - Copiar o index no editor HTML;
 - Sair do editor e entrar novamente. O Blogger irá gerar o site;
+- Procure por "<b:includable id='main' var='top'>" e substitua o código abaixo pelo conteúdo do "remove-date-outer":
+  ```
+  <b:loop values='data:posts' var='post'>
+  ----- até -----
+  </b:loop>
+  ```
 - Procure "firstImageUrl" e substitua o código abaixo pelo conteúdo do "post-thumbnail":
   ```
   <!-- Then use the post body as the schema.org description, for good G+/FB snippeting. -->
@@ -17,7 +23,6 @@
 - Página de download;
 - Votação;
 - Breadcrumb;
-- Paginação;
 - Comentários Facebook;
 - Posts semelhantes;
 - Novo gerador e uploader;

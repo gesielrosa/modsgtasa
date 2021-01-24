@@ -1,0 +1,16 @@
+<b:loop values='data:posts' var='post'>
+    <b:if cond='data:post.dateHeader'>
+        <h2 class='date-header'><span><data:post.dateHeader/></span></h2>
+    </b:if>
+    <div class='post-outer'>
+        <b:include data='post' name='post'/>
+        <b:include cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}' data='post' name='comment_picker'/>
+    </div>
+
+    <!-- Ad -->
+    <b:if cond='data:post.includeAd'>
+        <div class='inline-ad'>
+            <data:adCode/>
+        </div>
+    </b:if>
+</b:loop>

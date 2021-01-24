@@ -3,7 +3,7 @@
     flex-wrap: wrap;
 }
 
-.date-outer {
+.post-outer {
     width: 50%;
     padding: 5px;
 }
@@ -50,7 +50,7 @@
 }
 
 @media (max-width: 991.98px) {
-    .date-outer {
+    .post-outer {
         width: 100%;
         padding: 0;
         margin-bottom: 15px;
