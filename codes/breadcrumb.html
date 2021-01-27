@@ -1,0 +1,58 @@
+<b:includable id='breadcrumb' var='posts'>
+    <b:if cond='data:blog.homepageUrl != data:blog.url'>
+        <b:if cond='data:blog.pageType == &quot;item&quot;'>
+            <b:loop values='data:posts' var='post'>
+                <b:if cond='data:post.labels'>
+                    <nav aria-label="breadcrumb">
+                        <ol class='breadcrumb'>
+                            <li class="breadcrumb-item">
+                                <a expr:href='data:blog.homepageUrl'>
+                                    <i class='fa fa-home fa-lg'/>
+                                </a>
+                            </li>
+                            <b:loop values='data:post.labels' var='label'>
+                                <b:if cond='data:label.name == &quot;Veículos&quot;'>
+                                    <li class="breadcrumb-item">
+                                        <a expr:href='data:blog.homepageUrl + &quot;p/veiculos-para-gta-san-andreas.html&quot;'>
+                                            <data:label.name/>
+                                        </a>
+                                    </li>
+                                    <b:if cond='data:label.isLast != &quot;true&quot;'></b:if>
+                                </b:if>
+                            </b:loop>
+                            <b:loop values='data:post.labels' var='label'>
+                                <b:if cond='data:label.name == &quot;Carros&quot;'>
+                                    <li class="breadcrumb-item">
+                                        <a expr:href='data:blog.homepageUrl + &quot;p/carros-para-gta-san-andreas.html&quot;'>
+                                            <data:label.name/>
+                                        </a>
+                                    </li>
+                                    <b:if cond='data:label.isLast != &quot;true&quot;'></b:if>
+                                </b:if>
+                            </b:loop>
+                            <b:loop values='data:post.labels' var='label'>
+                                <b:if cond='data:label.name != &quot;Destaques&quot;'>
+                                    <b:if cond='data:label.name != &quot;Downloads&quot;'>
+                                        <b:if cond='data:label.name != &quot;Veículos&quot;'>
+                                            <b:if cond='data:label.name != &quot;Carros&quot;'>
+                                                <li class="breadcrumb-item">
+                                                    <a expr:href='data:label.url + &quot;?&amp;amp;max-results=5&quot;'>
+                                                        <data:label.name/>
+                                                    </a>
+                                                </li>
+                                                <b:if cond='data:label.isLast != &quot;true&quot;'></b:if>
+                                            </b:if>
+                                        </b:if>
+                                    </b:if>
+                                </b:if>
+                            </b:loop>
+                            <li class="breadcrumb-item active">
+                                <data:post.title/>
+                            </li>
+                        </ol>
+                    </nav>
+                </b:if>
+            </b:loop>
+        </b:if>
+    </b:if>
+</b:includable>

@@ -8,6 +8,7 @@
     --black: #111111;
     --white: #ffffff;
     --border-radius: .25rem;
+    --bs-breadcrumb-divider: '|'
 }
 
 body {
@@ -492,6 +493,13 @@ table .postDownload a span {
     color: rgba(255, 255, 255, 0.5);
     text-align: center;
     line-height: 50px;
+}
+
+.breadcrumb {
+    background-color: var(--light);
+    padding: 15px;
+    font-size: 12px;
+    border-radius: var(--border-radius);
 }
 
 @media (max-width: 767.98px) {

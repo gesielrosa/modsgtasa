@@ -16,13 +16,14 @@
       <div style='clear: both;'/> <!-- clear for photos floats -->
     </div>
   ```
+- Procure por `<b:include data='posts' name='breadcrumb'/>` e adicione a linha `<b:include data='posts' name='breadcrumb'/>` abaixo;
+  - Em seguida, na section MAIN > widget, adicione o conteúdo do arquivo `breadcrumb` na última posição da lista;
 - Copiar as section para os devidos lugares;
 
 ### Falta fazer
 
 - Página de download;
 - Votação;
-- Breadcrumb;
 - Comentários Facebook;
 - Posts semelhantes;
 - Novo gerador e uploader;
