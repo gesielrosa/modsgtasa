@@ -502,6 +502,12 @@ table .postDownload a span {
     border-radius: var(--border-radius);
 }
 
+.download-page {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
 @media (max-width: 767.98px) {
     .mobile-menu {
         display: flex;

@@ -1,21 +1,20 @@
-<!--<script src='http://topgta.com/gtasa/js/downloadname.js'>
-<script src='http://topgta.com/gtasa/js/download.js'>-->
-<center><script>function nomeArquivo(link) {
-    var lnk = link;
-    lnk = lnk.substr(lnk.search("loads/")+6);
-    return lnk;
-}
-var linkpro1 = window.parent.document.location.href;
-nomearq = nomeArquivo(linkpro1);
+<div class="download-page">
+    <script>
+        function getFileName(link) {
+            return link.substr(link.search('loads/') + 6);
+        }
+        document.write(`<strong>Nome do arquivo:</strong> ${getFileName(window.parent.document.location.href)}`);
+    </script>
+    <br/><br/>
+    <b>ATENÇÃO:</b> Não esqueça de fazer <b><a href="/p/backups.html">backup</a></b> antes de instalar qualquer modificação.
+    <br/>Todos os mods são testados, erros só ocorrerão por conta de má instalação.
+    <br/>Se não souber instalar o mod, confira a página de <b><a href="/p/tutoriais-para-gta-san-andreas.html">tutoriais</a></b>.
+    <br/><br/><br/>
+    <script>
+        function getDownloadURL(link) {
+            return link.substr(link.search('url=') + 4);
+        }
+        document.write(`<a class='btn-download' href='${getDownloadURL(window.parent.document.location.href)}' target='_blank'>DOWNLOAD</a>`);
+    </script>
+</div>
 
-document.write("<B>Nome do arquivo:</B> "+nomearq+"");</script><br /><br />
-    <font size='1'><b>ATENÇÃO:</b> Não esqueça de fazer <b><a href="/p/backups.html">backup</a></b> antes de instalar qualquer modificação.<br />Todos os mods são testados, erros só ocorrerão por conta de má instalação.<br />Se não souber instalar o mod, confira a página de <b><a href="/p/tutoriais-para-gta-san-andreas.html">tutoriais</a></b></font size='1'>.<br />
-    <br /><script>function linkProtetor(link) {
-        var lnk = link;
-        lnk = lnk.substr(lnk.search("url=")+4);
-        return lnk;
-    }
-    var linkpro = window.parent.document.location.href;
-    linkpro = linkProtetor(linkpro);
-
-    document.write("<a class='download2' href='"+ linkpro +"' target='_blank'> DOWNLOAD</a>");</script></center>

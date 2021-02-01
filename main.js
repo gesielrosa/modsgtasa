@@ -1,9 +1,7 @@
-// https://www.minifier.org/
-
 window.addEventListener('load', () => {
     setBackgroundImage();
     setCopyrightYear();
-    replaceDownloadLinks();
+    linkProtector();
 });
 
 function setBackgroundImage() {
@@ -34,7 +32,7 @@ function closeCategoriesMenu() {
     element.classList.remove('show');
 }
 
-function replaceDownloadLinks() {
+function replaceHttpLinks() {
     const elements = document.getElementsByTagName('a');
     for (let a of elements) {
         let link = a.href;
@@ -57,4 +55,64 @@ function openSearch() {
 function closeSearch() {
     const element = document.getElementById('search');
     element.classList.remove('active');
+}
+
+function linkProtector() {
+    const urluc = '/p/download.html?url=';
+
+    if (top.location.href.includes(urluc) || document.location.href.includes(urluc)) {
+        replaceHttpLinks();
+    } else {
+        let linkuc = document.getElementsByTagName('A');
+        let locuc;
+
+        try {
+            locuc = (`${top.location.href}`).replace('http://', '').replace('https://', '').replace('www.', '');
+        } catch (e) {
+            locuc = (`${document.location.href}`).replace('http://', '').replace('https://', '').replace('www.', '');
+        }
+
+        let domain_urluc;
+        for (let i = 0; i < linkuc.length; i++) {
+            domain_urluc = (`${linkuc[i].href}`).replace(/^\s+/g, '').replace(/\s+$/g, '').replace('http://', '').replace('https://', '');
+            if (duc(linkuc[i].href) && (((`${linkuc[i].href}`).indexOf(locuc) <= 0 || (`${linkuc[i].href}`).indexOf('http') <= 0) || (`${linkuc[i].href}`).lastIndexOf('http:') > 3) && (`${linkuc[i].href}`).indexOf('script:') <= 0 && (`${linkuc[i].href}`).indexOf('#') !== 1 && (`${linkuc[i].href}`).indexOf('mailto:') <= 0 && (`${linkuc[i].href}`).indexOf('file:') <= 0 && (`${linkuc[i].href}`).indexOf('#exit') <= 0 && !(!isNaN(parseInt(domain_urluc.substr(0, 1))) && (!isNaN(parseInt(domain_urluc.substr(0, 2))) || domain_urluc.substr(0, 2) === '.'))) {
+                linkuc[i].href = `${urluc}${linkuc[i]}`;
+            }
+        }
+    }
+}
+
+function duc(urluc) {
+    const domainuc = 'elitegta,mediafire,mega,4shared,drive';
+    const domainsuc = '';
+    let params_to_skip;
+    if (`${domainuc}` !== 'undefined' && domainuc !== '' && domainuc.replace(/\s/g, '') !== '' && urluc !== '') {
+        if ((`${domainuc}`).indexOf(',') > 0) {
+            params_to_skip = domainuc.split(',');
+        } else {
+            params_to_skip = new Array(domainuc);
+        }
+        for (let s = 0; s < params_to_skip.length; s++) {
+            if ((`${urluc.toLowerCase()}`).indexOf(params_to_skip[s].toLowerCase()) > 0) {
+                if (`${domainsuc}` !== 'undefined' && domainsuc !== '' && domainsuc.replace(/\s/g, '') !== '' && urluc !== '') {
+                    if ((`${domainsuc}`).indexOf(',') > 0) {
+                        params_to_skip = domainsuc.split(',');
+                    } else {
+                        params_to_skip = new Array(domainsuc);
+                    }
+                    for (let s = 0; s < params_to_skip.length; s++) {
+                        if ((`${urluc.toLowerCase()}`).indexOf(params_to_skip[s].toLowerCase()) > 0) {
+                            return false;
+                        }
+                    }
+                    return true;
+                } else {
+                    return true;
+                }
+            }
+        }
+        return false;
+    } else {
+        return false;
+    }
 }

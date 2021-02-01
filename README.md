@@ -22,7 +22,6 @@
 
 ### Falta fazer
 
-- Página de download;
 - Votação;
 - Comentários Facebook;
 - Posts semelhantes;
