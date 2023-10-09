@@ -37,11 +37,11 @@ function replaceHttpLinks() {
     for (let a of elements) {
         let link = a.href;
         if (link.includes('http://www.elitegta.com.br')) {
-            link = link.replace('http://www.elitegta.com.br/', 'https://elitegta.websiteseguro.com/')
+            link = link.replace('http://www.elitegta.com.br/', 'https://www.elitegta.com.br/')
             a.href = link;
         }
         if (link.includes('http://elitegta.com.br')) {
-            link = link.replace('http://elitegta.com.br/', 'https://elitegta.websiteseguro.com/')
+            link = link.replace('http://elitegta.com.br/', 'https://elitegta.com.br/')
             a.href = link;
         }
     }
